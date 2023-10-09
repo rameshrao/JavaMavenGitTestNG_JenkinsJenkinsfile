@@ -88,7 +88,8 @@
 			<uniqueVersion>false</uniqueVersion>
 			<id>releases2</id>
 			<name>maven-releases</name>
-			<url>http://localhost:8080/repository/maven-releases/</url>
+			<url>file:/Users/rameshrao/.m2/repository/</url>
+			<!-- <url>http://localhost:8080/repository/maven-releases/</url> -->
 		</repository>
 	</distributionManagement>
 
@@ -98,7 +99,8 @@
 			<id>releases2</id>
 			<name>maven-releases</name>
 			<layout>default</layout>
-			<url>http://localhost:8080/repository/maven-releases/</url>
+			<url>file:/Users/rameshrao/.m2/repository/</url>
+			<!-- <url>http://localhost:8080/repository/maven-releases/</url> -->
 		</repository>
 	</repositories>
 
