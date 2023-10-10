@@ -26,6 +26,7 @@ pipeline {
                 echo "Test End"
             }
             post {
+            	echo "Some message"
             	always{
             	    junit 'target/surefire-reports/*.xml'
             	}
