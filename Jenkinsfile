@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools { 
         maven 'Maven 3.9.4' 
-        jdk 'jdk17' 
+        jdk 'JDK 17' 
     }
     stages {
         stage('Clean') {
@@ -25,6 +25,14 @@ pipeline {
                 sh(/mvn -file pom.xml test/)
                 echo "Test End"
             }
+            post {
+            	echo "Post result"
+            	always{
+            	    junit 'target/surefire-reports/*.xml'
+            	}
+                echo "Post result completed"                
+            }
+
         }
         stage('Result') {
             steps {
