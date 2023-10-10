@@ -34,7 +34,7 @@ pipeline {
         stage('Result') {
             steps {
                 echo "Result Started"
-                junit '**/test-results/*.xml'
+                step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
                 echo "Result End"
             }
         }
