@@ -26,7 +26,6 @@ pipeline {
                 echo "Test End"
             }
             post {
-
             	always{
             	    junit 'target/surefire-reports/*.xml'
             	}
@@ -37,6 +36,20 @@ pipeline {
                 echo "Result Started"
                 step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
                 echo "Result End"
+            }
+        }
+        stage('Install') {
+            steps {
+                echo "Install Started"
+                sh(/mvn -file pom.xml install/)
+                echo "Install End"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploy Started"
+                sh(/mvn -file pom.xml deploy/)
+                echo "Deploy End"
             }
         }
     }
