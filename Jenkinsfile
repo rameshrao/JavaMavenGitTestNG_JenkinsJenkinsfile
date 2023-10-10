@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                echo "Clean Started"
+                echo "Clean Start"
                 sh(/mvn -file pom.xml clean/)
                 echo "Clean End"
             }
