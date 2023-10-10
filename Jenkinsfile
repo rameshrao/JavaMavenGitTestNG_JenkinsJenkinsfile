@@ -25,14 +25,13 @@ pipeline {
                 sh(/mvn -file pom.xml test/)
                 echo "Test End"
             }
+            echo "Post result"
             post {
-            	echo "Post result"
             	always{
             	    junit 'target/surefire-reports/*.xml'
             	}
-                echo "Post result completed"                
             }
-
+            echo "Post result completed"                
         }
         stage('Result') {
             steps {
