@@ -34,7 +34,7 @@ pipeline {
         stage('Result') {
             steps {
                 echo "Result Started"
-                junit '**/test-output/emailable-report.html'
+                junit '**/test-results/*.xml'
                 echo "Result End"
             }
         }
